@@ -1,0 +1,30 @@
+[package]
+name = "sqlx-timeout"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1.21.0", features = ["macros", "rt"] }
+actix-web = "4.2.1"
+actix-rt = "2.7.0"
+anyhow = "1.0.66"
+actix-server = "2.1.1"
+reqwest = "0.11.12"
+futures = "0.3.25"
+seq-macro = "0.3.1"
+
+[dependencies.sqlx]
+default-features = false
+features = [
+  "runtime-tokio-native-tls",
+  "macros",
+  "postgres",
+  "uuid",
+  "json",
+  "chrono",
+  "offline",
+  "migrate",
+]
+version = "0.6.1"
